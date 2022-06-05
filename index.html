@@ -5,34 +5,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://unpkg.com/phosphor-icons"></script>
     <title>Notes</title>
 </head>
 
 <body>
     <main>
-        <div class="note-content">
-            <li class="add-box">
-                <button class="button">
+        <ul class="note-content">
+            <li class="add-box list">
+                <button class="add-notes">
                     <i class="ph-plus"></i>
                 </button>
 
                 <h3>New note</h3>
             </li>
 
-            <li class="note">
+            <li class="note list">
                 <div class="details">
-                    <h2>Título</h2>
-                    <span>Hello, Jesus</span>
+                    <h2 id="notes-title">Título</h2>
+                    <span>Escaped the first quarter earnings </span>
                     <div class="bottom-content">
                         <span>Junho 4, 2022</span>
                         <button class="settings">
                             <i class="ph-dots-three"></i>
+
                         </button>
+                        <ul class="menu">
+                            <li><button id="edit"><i class="ph-pen">Editar</i></button></li>
+                            <li><button id="delete"><i class="ph-trash">Excluir</i></button></li>
+                        </ul>
                     </div>
                 </div>
             </li>
-        </div>
+        </ul>
     </main>
 </body>
 
