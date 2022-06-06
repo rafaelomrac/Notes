@@ -22,6 +22,87 @@ li{
     list-style: none;
 }
 
+main .popup-box{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.432);
+    z-index: 3;
+}
+
+main .popup-box .popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    width: 100%;
+    max-width: 25rem;
+
+    
+
+}
+
+
+main .popup-box .popup .content{
+    background: #F2FFEF;
+    border-radius: .7125rem;
+    padding: .4rem;
+}
+main .popup-box  .popup .content header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: .1rem solid #575767;
+    
+}
+
+main .popup-box .popup .content form{
+    margin: 1rem .3rem .4rem;
+}
+
+main .popup-box .popup .content form textarea{
+    resize: none;
+    height: 5.125rem;
+}
+
+
+
+main .popup-box .popup .content form :where(input, textarea){
+    width: 100%;
+    border: .1rem solid #575767;
+    outline: none;
+    height: 3.125rem;
+    font-size: 1.125rem;
+    padding: 0 1rem;
+}
+
+main .popup-box .popup .content form .row{
+    margin-bottom: 1.2rem;
+}
+
+main .popup-box .popup .content form .row label{
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: .4rem;
+}
+
+main .popup-box .popup .content form button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: #575767;
+    color: #F2FFEF;
+    font-size: 1.125rem;
+    font-weight: 700;
+    padding: .8rem .5125rem;
+    border-radius: .2rem;
+}
+
+
 
 main{
     padding: 2rem;

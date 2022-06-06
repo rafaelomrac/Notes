@@ -12,33 +12,58 @@
 
 <body>
     <main>
-        <ul class="note-content">
-            <li class="add-box list">
-                <button class="add-notes">
-                    <i class="ph-plus"></i>
-                </button>
+        <div class="popup-box">
+            <div class="popup">
+                <div class="content">
+                    <header>
+                        <h2>Insira uma nova nota</h2>
+                        <button class="ph-x"></button>
+                    </header>
+                    
 
-                <h3>New note</h3>
-            </li>
+                    <form action="#">
+                        <div class="row title">
+                            <label for="">Título</label>
+                            <input type="text">
+                        </div>
 
-            <li class="note list">
-                <div class="details">
-                    <h2 id="notes-title">Título</h2>
-                    <span>Escaped the first quarter earnings </span>
-                    <div class="bottom-content">
-                        <span>Junho 4, 2022</span>
-                        <button class="settings">
-                            <i class="ph-dots-three"></i>
+                        <div class="row description">
+                            <label for="">Descrição</label>
+                            <textarea  name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                        <button>Enviar</button>
 
-                        </button>
-                        <ul class="menu">
-                            <li><button id="edit"><i class="ph-pen">Editar</i></button></li>
-                            <li><button id="delete"><i class="ph-trash">Excluir</i></button></li>
-                        </ul>
-                    </div>
+                    </form>
                 </div>
-            </li>
-        </ul>
+            </div>
+
+            <ul class="note-content">
+                <li class="add-box list">
+                    <button class="add-notes">
+                        <i class="ph-plus"></i>
+                    </button>
+
+                    <h3>New note</h3>
+                </li>
+
+                <li class="note list">
+                    <div class="details">
+                        <h2 id="notes-title">Título</h2>
+                        <span>Escaped the first quarter earnings </span>
+                        <div class="bottom-content">
+                            <span>Junho 4, 2022</span>
+                            <button class="settings">
+                                <i class="ph-dots-three"></i>
+
+                            </button>
+                            <ul class="menu">
+                                <li><button id="edit"><i class="ph-pen">Editar</i></button></li>
+                                <li><button id="delete"><i class="ph-trash">Excluir</i></button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
     </main>
 </body>
 
