@@ -30,7 +30,14 @@ main .popup-box{
     width: 100%;
     background: rgba(0, 0, 0, 0.432);
     z-index: 3;
+    display: none;
 }
+
+main .popup-box.show{
+    display: block;
+}
+
+
 
 main .popup-box .popup{
     position: absolute;

@@ -19,7 +19,7 @@
                         <h2>Insira uma nova nota</h2>
                         <button class="ph-x"></button>
                     </header>
-                    
+
 
                     <form action="#">
                         <div class="row title">
@@ -29,42 +29,44 @@
 
                         <div class="row description">
                             <label for="">Descrição</label>
-                            <textarea  name="" id="" cols="30" rows="10"></textarea>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
                         </div>
                         <button>Enviar</button>
 
                     </form>
                 </div>
             </div>
+        </div>
+        <ul class="note-content">
+            <li class="add-box list">
+                <button class="add-notes">
+                    <i class="ph-plus"></i>
+                </button>
 
-            <ul class="note-content">
-                <li class="add-box list">
-                    <button class="add-notes">
-                        <i class="ph-plus"></i>
-                    </button>
+                <h3>New note</h3>
+            </li>
 
-                    <h3>New note</h3>
-                </li>
+            <li class="note list">
+                <div class="details">
+                    <h2 id="notes-title">Título</h2>
+                    <span>Escaped the first quarter earnings </span>
+                    <div class="bottom-content">
+                        <span>Junho 4, 2022</span>
+                        <button class="settings">
+                            <i class="ph-dots-three"></i>
 
-                <li class="note list">
-                    <div class="details">
-                        <h2 id="notes-title">Título</h2>
-                        <span>Escaped the first quarter earnings </span>
-                        <div class="bottom-content">
-                            <span>Junho 4, 2022</span>
-                            <button class="settings">
-                                <i class="ph-dots-three"></i>
-
-                            </button>
-                            <ul class="menu">
-                                <li><button id="edit"><i class="ph-pen">Editar</i></button></li>
-                                <li><button id="delete"><i class="ph-trash">Excluir</i></button></li>
-                            </ul>
-                        </div>
+                        </button>
+                        <ul class="menu">
+                            <li><button id="edit"><i class="ph-pen">Editar</i></button></li>
+                            <li><button id="delete"><i class="ph-trash">Excluir</i></button></li>
+                        </ul>
                     </div>
-                </li>
-            </ul>
+                </div>
+            </li>
+        </ul>
     </main>
+
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>
