@@ -59,9 +59,14 @@ main .popup-box .popup .content{
     border-radius: .7125rem;
     padding: .4rem;
 }
+
+main .popup-box  .popup .content header h2{
+    margin-left: .412rem;
+}
+
 main .popup-box  .popup .content header{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     border-bottom: .1rem solid #575767;
     
