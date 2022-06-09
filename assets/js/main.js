@@ -23,7 +23,7 @@ const getDataLocalStorage = () => JSON.parse(localStorage.getItem("notesData")) 
 
 const isValidFields = () => document.querySelector("form").reportValidity();
 
- const date = () => new Date();
+const date = () => new Date();
 
 
 const createNotes = notes => {
@@ -31,10 +31,12 @@ const createNotes = notes => {
     data.push(notes);
 
     setDataLocalStorage(data);
-}
+};
 
-const sendNotes = () => {
+const sendNotes = event => {
     
+    event.preventDefault();
+
     if (isValidFields()){
         const notes = {
             title: document.querySelector("input[type='text']").value,
