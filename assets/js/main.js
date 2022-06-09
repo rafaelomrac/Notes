@@ -1,4 +1,4 @@
-const month = ["janeiro", "fevereiro", "março", "abril",
+const months = ["janeiro", "fevereiro", "março", "abril",
     "maio", "junho", "julho", "agsoto", "setembro",
     "outubro", "novembro", "dezembro"
 ];
@@ -21,12 +21,9 @@ const setDataLocalStorage = data => localStorage.setItem("notesData", JSON.strin
 
 const getDataLocalStorage = () => JSON.parse(localStorage.getItem("notesData")) ?? [];
 
-const isValid = () => document.querySelector("form").reportValidity();
+const isValidFields = () => document.querySelector("form").reportValidity();
 
-const db = {
-    notesTitle : "Lavar o carro",
-    notes : "Lavar o carro porque vou ir para Arraial"
-};
+ const date = () => new Date();
 
 
 const createNotes = notes => {
@@ -36,16 +33,13 @@ const createNotes = notes => {
     setDataLocalStorage(data);
 }
 
-const sendNotes = event => {
-    const noteTitle = document.querySelector("input[type='text']").value;
-    const note = document.querySelector("textarea").value;
-
-    event.preventDefault();
-
-    if (isValid()){
+const sendNotes = () => {
+    
+    if (isValidFields()){
         const notes = {
-            title: noteTitle,
-            note: note
+            title: document.querySelector("input[type='text']").value,
+            note: document.querySelector("textarea").value,
+            date: `${months[date().getMonth()]} ${date().getDate()}, ${date().getFullYear()}`,
 
         }
 
