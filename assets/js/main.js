@@ -34,10 +34,10 @@ const createNotes = notes => {
 };
 
 const sendNotes = event => {
-    
+
     event.preventDefault();
 
-    if (isValidFields()){
+    if (isValidFields()) {
         const notes = {
             title: document.querySelector("input[type='text']").value,
             note: document.querySelector("textarea").value,
@@ -48,26 +48,55 @@ const sendNotes = event => {
         createNotes(notes);
         closeModal();
         clearFields();
+        showNotes();
     }
-};       
+};
 
 
-function clearFields () {
+function clearFields() {
     const notes = document.querySelectorAll("textarea");
     const noteTitle = document.querySelectorAll("input[type='text']")
 
     notes.forEach(note => note.value = "");
 
     noteTitle.forEach(note => note.value = "");
-};      
-    
+};
+
+const showNotes = () => {
+
+    document.querySelectorAll(".note").forEach( e => e.remove())
+
+    getDataLocalStorage().forEach(note => {
+
+        const element = ` <li class="note list">
+        <div class="details">
+            <h2 id="notes-title">${note.title}</h2>
+            <span>${note.note} </span>
+            <div class="bottom-content">
+                <span>${note.date}</span>
+                <button class="settings">
+                    <i class="ph-dots-three"></i>
+
+                </button>
+                <ul class="menu">
+                    <li><button id="edit"><i class="ph-pen">Editar</i></button></li>
+                    <li><button id="delete"><i class="ph-trash">Excluir</i></button></li>
+                </ul>
+            </div>
+        </div>
+    </li>`;
+
+        const noteContent = document.querySelector(".add-box");
+
+        noteContent.insertAdjacentHTML("afterend", element);
+    });
+};
 
 
 
 
 
-
-
+showNotes();
 
 
 
