@@ -17,7 +17,7 @@ const closeModal = () => {
     popup.classList.remove("show");
 };
 
-const setDataLocalStorage = data => localStorage.setItem("notesData", JSON.stringify(data));
+const setDataLocalStorage = data =>  localStorage.setItem("notesData", JSON.stringify(data));
 
 const getDataLocalStorage = () => JSON.parse(localStorage.getItem("notesData")) ?? [];
 
@@ -27,7 +27,7 @@ const date = () => new Date();
 
 
 const createNotes = notes => {
-    data = getDataLocalStorage();
+    const data = getDataLocalStorage();
     data.push(notes);
 
     setDataLocalStorage(data);
@@ -37,54 +37,53 @@ const sendNotes = event => {
 
     event.preventDefault();
 
-    if (isValidFields()) {
+    if(isValidFields()){
         const notes = {
-            title: document.querySelector("input[type='text']").value,
-            note: document.querySelector("textarea").value,
+            title: document.getElementById("title-note").value,
+            description: document.getElementById("note-description").value,
             date: `${months[date().getMonth()]} ${date().getDate()}, ${date().getFullYear()}`,
 
-        }
+        };
 
         createNotes(notes);
-        closeModal();
         clearFields();
+        closeModal();
         showNotes();
-    }
-};
+
+    };
+}
 
 
 function clearFields() {
-    const notes = document.querySelectorAll("textarea");
-    const noteTitle = document.querySelectorAll("input[type='text']")
+   
+   document.querySelectorAll("form [required]").forEach(field => field.value = "")
 
-    notes.forEach(note => note.value = "");
-
-    noteTitle.forEach(note => note.value = "");
 };
+
+
 
 const showNotes = () => {
 
-    document.querySelectorAll(".note").forEach( e => e.remove())
-
-    getDataLocalStorage().forEach(note => {
+    const data = getDataLocalStorage(); 
+    
+    data.forEach(note => {
 
         const element = ` <li class="note list">
-        <div class="details">
-            <h2 id="notes-title">${note.title}</h2>
-            <span>${note.note} </span>
-            <div class="bottom-content">
-                <span>${note.date}</span>
-                <button class="settings">
-                    <i class="ph-dots-three"></i>
-
-                </button>
-                <ul class="menu">
-                    <li><button id="edit"><i class="ph-pen">Editar</i></button></li>
-                    <li><button id="delete"><i class="ph-trash">Excluir</i></button></li>
-                </ul>
-            </div>
-        </div>
-    </li>`;
+                                    <div class="details">
+                                        <h2 id="notes-title">${note.title}</h2>
+                                        <span>${note.description} </span>
+                                        <div class="bottom-content">
+                                            <span>${note.date}</span>
+                                            <div class="edit-delete">
+                                                    <ul class="menu">
+                                                        <li><button id="edit" title= "editar"><i class="ph-pen"></i></button></li>
+                                                        <li><button id="delete" title= "deletar"><i class="ph-trash"></i></button></li>
+                                                    </ul>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                            </li>`;
 
         const noteContent = document.querySelector(".add-box");
 
@@ -92,13 +91,7 @@ const showNotes = () => {
     });
 };
 
-
-
-
-
 showNotes();
-
-
 
 
 document.getElementById("add-box").addEventListener("click", openModal);

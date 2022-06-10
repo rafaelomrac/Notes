@@ -136,7 +136,7 @@ main .note-content .list{
     justify-content: center;
     border-radius: 0.4rem;
     padding: .6875rem .5rem;
-    max-height: 21rem;
+    min-height: 21rem;
 
     width: 100%;
 }
@@ -204,29 +204,15 @@ main .note-content .note .bottom-content span{
     font-size: .875rem;
 }
 
-main .note-content .note .bottom-content button{
+main .note-content .note .bottom-content .edit-delete{
     position: relative;
 }
 
-main .note-content .note .bottom-content button .ph-dots-three{
-    font-size: 2.2rem;
-}
 
 main .note-content .note .bottom-content  .menu{
     padding: .4rem 0;
-    
-    border-radius: 0.2rem;
-    position: absolute;
-    bottom: -2.9rem;
-    right: -3.8rem;
-    width: 5rem;
-    z-index: 2;
-    opacity: 0;
-  
-}
 
-main .note-content .note .bottom-content .menu.show{
-    opacity: 1;
+  
 }
 
 
@@ -235,11 +221,13 @@ main .note-content .note .bottom-content .menu li{
     border-radius: 0;
     
     background: #F2FFEF;
-    transition: all .5s ease-in-out;border: .1rem solid #000A;
+}  
+
+
+main .note-content .note .bottom-content .menu li button{
+    transition: all .5s ease-in-out;
 }
 
-
-main .note-content .note .bottom-content .menu li:hover{
-    background: #575767;
-    
+main .note-content .note .bottom-content .menu li button:hover{
+    transform: scale(2);
 }
