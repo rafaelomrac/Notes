@@ -17,9 +17,6 @@ const closeModal = () => {
     popup.classList.remove("show");
 };
 
-const setDataLocalStorage = data =>  localStorage.setItem("notesData", JSON.stringify(data));
-
-const getDataLocalStorage = () => JSON.parse(localStorage.getItem("notesData")) ?? [];
 
 const isValidFields = () => document.querySelector("form").reportValidity();
 
@@ -62,7 +59,7 @@ function clearFields() {
 
 
 
-const showNotes = () => {
+const showNotes = index => {
 
     const data = getDataLocalStorage(); 
     
@@ -76,8 +73,8 @@ const showNotes = () => {
                                             <span>${note.date}</span>
                                             <div class="edit-delete">
                                                     <ul class="menu">
-                                                        <li><button id="edit" title= "editar"><i class="ph-pen"></i></button></li>
-                                                        <li><button id="delete" title= "deletar"><i class="ph-trash"></i></button></li>
+                                                        <li><button id="edit" title= "editar"><i id="pen-${index}" class="ph-pen"></i></button></li>
+                                                        <li><button id="delete" title= "deletar"><i id="trash-${index}" class="ph-trash"></i></button></li>
                                                     </ul>
                                             </div>
                                             
@@ -91,9 +88,36 @@ const showNotes = () => {
     });
 };
 
+const fillFields = field => {
+   // document.getElementById("title-note").value = field,
+  //  document.getElementById("note-description").value,
+             
+    connsole.log("chegou")
+};
+
+
+
+const clear = () => {
+    const r = document.querySelectorAll('.note-content > li.note')
+    r.forEach(rr => r.parentNode.removeChild(rr))
+};
+
+
+const editDelete = event => { 
+    const e = event.target.id
+    console.log(e)
+
+    if ( e == "trash"){
+        console.log("deletou")
+    };
+
+    
+};
+
 showNotes();
 
 
 document.getElementById("add-box").addEventListener("click", openModal);
 document.getElementById("close-popup").addEventListener("click", closeModal);
 document.getElementById("seding-notes").addEventListener("click", sendNotes);
+document.querySelector(".note-content > .note").addEventListener("click", editDelete);
